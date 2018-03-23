@@ -1,8 +1,19 @@
 #!/bin/bash
 
 case $1 in
-#  '-h' | '--help' )
-#    ;;
+  '-h' | '--help' )
+    echo "
+Usage:
+
+favd -a             Add current directory to fav list
+favd -a /some/path  Add specified directory to fav list
+favd -l             Show list of faved directories
+favd 1              cd to the directory with number shown in 'favd -l'
+favd someword       Partial match with fav list and cd if only one matched
+
+For more information: https://github.com/yoshi-self/favd
+"
+    ;;
   '-a' | '--add' )
     # add
     if [ -z $2 ]; then
