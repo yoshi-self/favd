@@ -42,5 +42,5 @@ favd partofdirname
 ```
 
 ### Delete faved directory
-Not implemented (TODO) 
+Not implemented(TODO)  
 Now please just manually remove the line from ~/.favd_list
