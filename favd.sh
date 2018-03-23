@@ -8,11 +8,11 @@ case $1 in
     if [ -z $2 ]; then
       # add current dir
       echo $PWD >> ~/.favd_list
-      echo "added $PWD to ~/.favd_list"
+      echo "Added $PWD to ~/.favd_list"
     else
       # add specified dir
       echo $2 >> ~/.favd_list
-      echo "added $2 to ~/.favd_list"
+      echo "Added $2 to ~/.favd_list"
     fi
     ;;
   '-l' | '-ls' | '--list' )
