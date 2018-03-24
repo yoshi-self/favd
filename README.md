@@ -46,7 +46,7 @@ cd to the directory if only one directory matched
 ```
 favd partofdirname
 ```
-### With Bash completion
+#### With Bash completion
 If you sourced favd-bash-completion.sh, completion works on first argument
 
 ### Delete faved directory
