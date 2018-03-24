@@ -33,17 +33,19 @@ favd -l
 ```
 
 ### cd to a directory
-#### with number
+#### With number
 cd to directory with number shown in `favd -l`
 ```
 favd 1
 ```
-#### with word
+#### With word
 Tries to partial match with faved directories  
 cd to the directory if only one directory matched
 ```
 favd partofdirname
 ```
+### With Bash completion
+If you sourced favd-bash-completion.sh, completion works on first argument
 
 ### Delete faved directory
 Not implemented(TODO)  
