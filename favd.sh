@@ -8,8 +8,11 @@ Usage:
 favd -a             Add current directory to fav list
 favd -a /some/path  Add specified directory to fav list
 favd -l             Show list of faved directories
-favd 1              cd to the directory with number shown in 'favd -l'
-favd someword       Partial match with fav list and cd if only one matched
+favd [number]       cd to the directory with number shown in 'favd -l'
+favd [not number]   Partial match with fav list and cd if only one matched
+
+Note: cd doesn't work in current shell
+      unless this script is executed by \"source\" command
 
 For more information: https://github.com/yoshi-self/favd
 "
