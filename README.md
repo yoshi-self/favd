@@ -25,7 +25,9 @@ Add specified directory
 ```
 favd -a /home/yoshi/some/dir/
 ```
-favd creates ~/.favd_list to store directories
+favd creates ~/.favd_list to store directory informations  
+You can just modify this file directly  
+(Write 1 directory per 1 line)
 
 ### List faved directories
 ```
