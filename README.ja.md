@@ -9,7 +9,7 @@ alias favd="source /absolute/path/to/favd.sh"
 ```
 NOTE: cdはsourceコマンドから実行されないと現在のシェルに反映されません
   
-#### 3. Bash補完を使うには.bashrceでfavd-bash-completion.shをsource
+#### 3. Bash補完を使うには.bashrcでfavd-bash-completion.shをsource
 ```
 source /absolute/path/to/favd-bash-completion.sh
 ```
@@ -45,7 +45,7 @@ favd 1
 ```
 favd partofdirname
 ```
-### Bash補完
+#### Bash補完
 favd-bash-completion.shをsourceしている場合、第1引数目でTABを押すと補完ができます
 
 ### 保存したディレクトリの削除
