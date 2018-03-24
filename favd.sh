@@ -1,8 +1,24 @@
 #!/bin/bash
 
-case $1 in
-  '-h' | '--help' )
-    echo "
+# check whether dir is already added in fav list
+check_dir_exists_in_list() {
+  if [ -s ~/.favd_list ]; then
+    favs=(`tr "\n" ' ' < ~/.favd_list`)
+    for fav in ${favs[@]}; do
+      if [[ $fav = $1 ]]; then
+        # found
+        echo 1
+        return
+      fi
+    done
+    echo 0
+  else
+    echo 0
+  fi
+}
+
+echo_usage() {
+  echo "
 Usage:
 
 favd -a             Add current directory to fav list
@@ -16,17 +32,42 @@ Note: cd doesn't work in current shell
 
 For more information: https://github.com/yoshi-self/favd
 "
+}
+
+# no argument
+if [ $# -lt 1 ]; then
+  echo_usage
+  # NOTE: this script is executed by 'source', return instead of exit
+  return
+fi
+
+case $1 in
+  '-h' | '--help' )
+    echo_usage
     ;;
   '-a' | '--add' )
     # add
     if [ -z $2 ]; then
       # add current dir
-      echo $PWD >> ~/.favd_list
-      echo "Added $PWD to ~/.favd_list"
+      new_dir=$PWD
+      #echo $PWD >> ~/.favd_list
+      #echo "Added $PWD to ~/.favd_list"
     else
       # add specified dir
-      echo $2 >> ~/.favd_list
-      echo "Added $2 to ~/.favd_list"
+      new_dir=$2
+      #echo $2 >> ~/.favd_list
+      #echo "Added $2 to ~/.favd_list"
+    fi
+
+    # check if dir already added
+    exists=`check_dir_exists_in_list $new_dir`
+    if [ $exists -eq 0 ]; then
+      # new, then add
+      echo "Added $new_dir to ~/.favd_list"
+      echo $new_dir >> ~/.favd_list
+    else
+      # exists, then don't add
+      echo "Directory $new_dir already exists in faved list"
     fi
     ;;
   '-l' | '-ls' | '--list' )
