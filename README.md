@@ -2,13 +2,17 @@
 Bookmark directories and cd to them
 
 ## Installation
-Put favd.sh somewhere  
-Add alias of source command in your .bashrc like following  
-(alias name is whatever you choose)
+#### 1. Clone or download and put files somewhere  
+#### 2. Add alias of source command in your .bashrc like following  
 ```
 alias favd="source /absolute/path/to/favd.sh"
 ```
-NOTE: cd doesn't work in current shell unless executed by source command
+NOTE: cd doesn't work in current shell unless executed by source command  
+  
+#### 3. For bash completion, also add source command in your .bashrc
+```
+source /absolute/path/to/favd-bash-completion.sh
+```
 
 ## Usage
 
