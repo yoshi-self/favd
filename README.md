@@ -13,7 +13,7 @@ NOTE: cd doesn't work in current shell unless executed by source command
 ```
 source /absolute/path/to/favd-bash-completion.sh
 ```
-If your alias name is not "favd", modify this line to your alias
+If your alias name is not "favd", modify this line in the file to your alias
 ```
 complete -F _favd_bash_complete favd
 ```
