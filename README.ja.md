@@ -13,6 +13,10 @@ NOTE: cdはsourceコマンドから実行されないと現在のシェルに反
 ```
 source /absolute/path/to/favd-bash-completion.sh
 ```
+alias名を"favd"以外にした場合、上記ファイルの以下の行を実際のalias名に変更してください
+```
+complete -F _favd_bash_complete favd
+```
 
 ## 使い方
 
